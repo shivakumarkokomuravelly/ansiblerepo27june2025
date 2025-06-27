@@ -1,0 +1,9 @@
+--- 
+- hosts: 172.31.7.132 
+  become: yes 
+  tasks:
+   - name: install openjdk-17 
+     apt:
+      name: openjdk-17-jdk
+      state: present 
+      update_cache: yes
