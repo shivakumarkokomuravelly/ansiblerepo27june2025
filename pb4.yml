@@ -1,0 +1,9 @@
+---
+- hosts: all 
+  become: yes 
+  tasks:
+  - name: installing htop on all nodes includesing localhost 
+    apt: 
+     name: htop 
+     state: present 
+     update_cache: yes 
