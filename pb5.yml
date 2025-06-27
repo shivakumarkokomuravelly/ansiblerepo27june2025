@@ -1,0 +1,12 @@
+--- 
+- hosts: 172.31.7.132
+  become: yes 
+  vars:
+    a: user1 
+    b: /home/user1
+  tasks:
+  - name: creating a user with variables 
+    user:
+      name: "{{ a }}"
+      home: "{{ b }}"
+      state: present 
