@@ -1,0 +1,11 @@
+--- 
+- hosts: 172.31.7.132 
+  become: yes 
+  tasks: 
+  - name: using loops 
+    user:
+     name: "{{ item }}"
+    loop:
+     - user1
+     - user2 
+     - user3  
