@@ -1,0 +1,10 @@
+--- 
+- hosts: appservers
+  become: yes 
+  tasks:  
+  - name: using group variables 
+    apt:
+     name: "{{ x }}"
+     state: "{{ y }}"
+     update_cache: "{{ z }}" 
+
