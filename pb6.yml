@@ -1,0 +1,14 @@
+--- 
+- hosts: 172.31.7.132 
+  become: yes 
+  vars:
+    a: openjdk-11-jdk 
+    b: present 
+    c: yes 
+  tasks: 
+  - name installing openjdk 11 with variables
+    apt:
+      name: "{{ a }}"
+      state: "{{ b }}"
+      update_cache: "{{ c }}"   
+      
