@@ -1,0 +1,9 @@
+--- 
+- hosts: 172.31.7.132
+  become: yes 
+  tasks: 
+  - name: installing apache2 on 172.31.7.132
+    apt: 
+      name: "{{ l }}"
+      state: "{{ m }}"
+      update_cache: "{{ n }}"
