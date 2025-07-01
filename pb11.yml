@@ -1,0 +1,5 @@
+---
+- hosts: localhost 
+  become: yes 
+  tasks:
+   -import_tasks: pb10.yml
