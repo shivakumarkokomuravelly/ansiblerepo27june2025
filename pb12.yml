@@ -1,0 +1,15 @@
+---
+
+- hosts: localhost
+  become: yes
+
+  vars:
+   a: 10
+  tasks:
+   - name: Implementing when
+     apt:
+       name: tree
+       state: present
+     when: a==10
+...
+
