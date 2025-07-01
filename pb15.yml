@@ -1,0 +1,21 @@
+---
+
+- hosts: localhost
+  become: true
+  tasks:
+   - name: Installing apache2
+     apt:
+      name: apache2
+      state: present
+   - name: Edit index.html
+     copy:
+      content: "Welcome to ansible"
+      dest: /var/www/html/index.html
+     notify: restart_apache2
+  handlers:
+   - name: restart_apache2
+     service:
+      name: apache2
+      state: restarted
+...
+
