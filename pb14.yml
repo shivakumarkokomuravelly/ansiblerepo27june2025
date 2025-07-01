@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+   - name: installing tree
+     apt:
+      name: tree
+      state: present
+     tags:
+      tree_installation
+   - name: installing apache
+     apt:
+      name: apache2
+      state: present
+     tags:
+      apache2_installation
+   - name: installing git
+     apt:
+      name: git
+      state: present
+...
