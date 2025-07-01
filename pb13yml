@@ -1,0 +1,14 @@
+---
+
+- hosts: localhost
+  become: yes
+  tasks:
+   - name: Installing maven
+     apt:
+      name: maven
+      state: present
+     register: results
+   - name: Displaying the output
+     debug:
+      var: results
+...
