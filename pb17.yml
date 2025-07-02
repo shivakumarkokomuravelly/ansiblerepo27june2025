@@ -1,0 +1,20 @@
+---
+ 
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: checking home dir of user /home/ravi
+    stat:
+     path: /home/terraform
+    register: a
+  - name: Display output of stat module
+    debug:
+     var: a
+  - name: User Creation
+    user:
+     name: terraform
+     password: abc
+     home: /home/terraform
+     shell: /bin/sh
+    when:
+     a.stat.exists == false
