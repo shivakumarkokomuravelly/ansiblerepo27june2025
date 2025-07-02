@@ -1,0 +1,14 @@
+--- 
+- hosts: 172.31.7.132 
+  become: yes 
+  tasks: 
+  - name: installing apache2 
+    apt: 
+      name: apache2 
+      state: present
+  - name: using templates      
+    templates:
+     sr: mytemplate.j2
+     dest: /var/www/html/index.html
+
+  
