@@ -1,0 +1,18 @@
+---
+
+- hosts: localhost
+  become: yes
+  tasks:
+   - name: Checking if /home/ansible is present
+     stat:
+      path: /home/ansible
+     register: results
+   - name : Displaying output of stat module
+     debug:
+      var: results
+   - name: Creating file
+     file:
+      name: /home/ansible/azure
+      state: touch
+     when:
+      results.stat.isdir == true
